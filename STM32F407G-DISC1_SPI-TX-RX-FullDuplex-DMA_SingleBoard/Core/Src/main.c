@@ -158,15 +158,21 @@ int main(void)
 			have_error = 1;
 	}
 	if (have_error == 1)
+	{
 		errorcode = 1;
+		have_error = 0;
+	}
 
 	for(uint16_t cntr = 0; cntr < numdata; cntr++)
 	{
-		if (!(send_data1[cntr] == receive_data1[cntr]))
+		if (!(send_data2[cntr] == receive_data2[cntr]))
 			have_error = 1;
 	}
 	if (have_error == 1)
+	{
 		errorcode = errorcode + 2;
+		have_error = 1;
+	}
 
 	printf("receive_data1 Buffer \n");
 	for(uint16_t cntr = 0; cntr < numdata; cntr++)
